@@ -37,5 +37,10 @@ h1 {
   width: 200px;
   margin: 2px 0;
   background-color: #e1e1e1;
+  border: solid 3px black;
+  position: absolute;
+}
+.board {
+  background-color: #05B7FF;
 }
 /*# sourceMappingURL=sticky.1.0.0.css.map */
