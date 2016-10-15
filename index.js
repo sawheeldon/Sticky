@@ -14,6 +14,9 @@ var Note = React.createClass({
             transform: 'rotate(' + this.randomBetween(-15, 15) + 'deg)'
         };
     },
+    componentDidMount: function(){
+        $(ReactDOM.findDOMNode(this)).draggable(); 
+    },
     randomBetween: function(min, max) {
         return (min + Math.ceil(Math.random() * max));
     },
@@ -21,7 +24,7 @@ var Note = React.createClass({
       this.setState({editing:true});
     },
     save: function(){
-        this.props.onChange(this.refs.newText.ReactDOMgetDOMNode().value, this.props.index);
+        this.props.onChange(ReactDOM.findDOMNode(this.refs.newText).value, this.props.index);
         this.setState({editing:false});
     },
     remove: function(){
@@ -44,7 +47,7 @@ var Note = React.createClass({
     renderForm: function(){
         return(
             <div className="note">
-            <textarea ref="newText" value={this.props.children} 
+            <textarea ref="newText" value={this.props.children.bind} 
                 className="form-control"> </textarea>
                 <button onClick={this.save} className=" btn btn-primary glyphicon glyphicon-ok" />
             </div>

@@ -28,6 +28,7 @@ General styles (General Module, wrapping around the modules bellow)
 body {
   font-family: 'Indie Flower', cursive;
   background-color: #05B7FF;
+  font-size: 20px;
 }
 h1 {
   font-family: 'Baloo Da', cursive;

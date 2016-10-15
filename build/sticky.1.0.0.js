@@ -63,6 +63,9 @@
 	            transform: 'rotate(' + this.randomBetween(-15, 15) + 'deg)'
 	        };
 	    },
+	    componentDidMount: function componentDidMount() {
+	        $(ReactDOM.findDOMNode(this)).draggable();
+	    },
 	    randomBetween: function randomBetween(min, max) {
 	        return min + Math.ceil(Math.random() * max);
 	    },
@@ -70,7 +73,7 @@
 	        this.setState({ editing: true });
 	    },
 	    save: function save() {
-	        this.props.onChange(this.refs.newText.ReactDOMgetDOMNode().value, this.props.index);
+	        this.props.onChange(ReactDOM.findDOMNode(this.refs.newText).value, this.props.index);
 	        this.setState({ editing: false });
 	    },
 	    remove: function remove() {
@@ -101,7 +104,7 @@
 	            { className: 'note' },
 	            React.createElement(
 	                'textarea',
-	                { ref: 'newText', value: this.props.children,
+	                { ref: 'newText', value: this.props.children.bind,
 	                    className: 'form-control' },
 	                ' '
 	            ),
