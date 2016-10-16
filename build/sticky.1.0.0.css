@@ -29,19 +29,75 @@ body {
   font-family: 'Indie Flower', cursive;
   background-color: #05B7FF;
   font-size: 20px;
+  text-align: center;
 }
 h1 {
   font-family: 'Baloo Da', cursive;
+  font-size: 50px;
+  text-decoration: underline;
+  padding: 2rem;
+}
+#welcomeText {
+  font-size: 25px;
+  padding: 2rem;
 }
 .note {
   height: 200px;
   width: 200px;
-  margin: 2px 0;
+  margin-top: 200px;
+  margin-right: 2rem;
+  margin-left: 2rem;
+  margin-bottom: 300px;
   background-color: #e1e1e1;
   border: solid 3px black;
   position: absolute;
+  display: inline-block;
+}
+.note p {
+  padding: 5px;
+}
+.note > span {
+  position: absolute;
+  bottom: 2px;
+  right: 2px;
+}
+div.note > textarea {
+  height: 75%;
 }
 .board {
   background-color: #05B7FF;
+}
+/* -------------------------------------
+place all the desktop styles above this line
+Responsive styles
+(the very last module in the CSS, contains all the media queries and it is dealing with the compatibility with mobiles and tablets)
+place all the mobile tables styles bellow this line
+*/
+/*ipad lanscape / small laptop*/
+@media only screen and (max-width: 1024px) {
+  /* acting like an IF statement, the media query is a set of conditions in which the containing css will be applied
+    for example the statament above says: IF the media on which this CSS is going to used is SCREEN (Mobiles, Tables, Laptops, Desktops or Projectors) and the maximum resolution of that device is 1024px, THEN apply the body color blue for all the text
+    */
+  body {
+    color: blue;
+  }
+}
+/*ipad potrait*/
+@media only screen and (max-width: 768px) {
+  body {
+    color: red;
+  }
+}
+/*iPhone landscape*/
+@media only screen and (max-width: 480px) {
+  body {
+    color: green;
+  }
+}
+/*iPhone portrait*/
+@media only screen and (max-width: 320px) {
+  body {
+    color: purple;
+  }
 }
 /*# sourceMappingURL=sticky.1.0.0.css.map */

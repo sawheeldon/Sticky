@@ -27,6 +27,7 @@ CSS reset
 @noteBackground: rgb(225, 225, 225);
 @backgroundColor: #05B7FF;
 @hightlightColor: #A5DDFE;
+@genPad:2rem;
 @thickBorder: solid 3px black;
 @titleFont:'Baloo Da', cursive;
 @genFont:'Indie Flower', cursive;
@@ -41,20 +42,45 @@ body{
     font-family:@genFont;
     background-color:@backgroundColor;
     font-size:20px;
+    text-align:center;
 }
 
 h1{
     font-family: @titleFont;
+    font-size:50px;
+    text-decoration: underline;
+    padding:@genPad;
+}
+#welcomeText{
+    font-size:25px;
+    padding:@genPad;
 }
 
 .note{
     height: 200px;
     width: 200px;
-    margin: 2px 0;
+    margin-top:200px;
+    margin-right:2rem;
+    margin-left:2rem;
+    margin-bottom:300px;
     background-color:@noteBackground;
     border: @thickBorder;
     position: absolute;
+    display:inline-block;
+}
+.note p {
+    padding:5px;
+}
+.note > span{
+    position: absolute;
+    bottom: 2px;
+    right: 2px;
+}
+div.note > textarea {
+    height: 75%;
 }
 .board {
     background-color: @backgroundColor;
 }
+
+

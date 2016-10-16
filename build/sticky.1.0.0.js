@@ -49,76 +49,7 @@
 	/* global $ */
 	var React = __webpack_require__(1);
 	var ReactDOM = __webpack_require__(34);
-	
-	var Note = React.createClass({
-	    displayName: 'Note',
-	
-	    getInitialState: function getInitialState() {
-	        return { editing: false };
-	    },
-	    componentWillMount: function componentWillMount() {
-	        this.style = {
-	            right: this.randomBetween(0, window.innerWidth - 200) + 'px',
-	            top: this.randomBetween(0, window.innerHeight - 200) + 'px',
-	            transform: 'rotate(' + this.randomBetween(-15, 15) + 'deg)'
-	        };
-	    },
-	    componentDidMount: function componentDidMount() {
-	        $(ReactDOM.findDOMNode(this)).draggable();
-	    },
-	    randomBetween: function randomBetween(min, max) {
-	        return min + Math.ceil(Math.random() * max);
-	    },
-	    edit: function edit() {
-	        this.setState({ editing: true });
-	    },
-	    save: function save() {
-	        this.props.onChange(ReactDOM.findDOMNode(this.refs.newText).value, this.props.index);
-	        this.setState({ editing: false });
-	    },
-	    remove: function remove() {
-	        this.props.onRemove(this.props.index);
-	    },
-	    renderDisplay: function renderDisplay() {
-	        return React.createElement(
-	            'div',
-	            { className: 'note', style: this.style },
-	            React.createElement(
-	                'p',
-	                null,
-	                this.props.children
-	            ),
-	            React.createElement(
-	                'span',
-	                null,
-	                React.createElement('button', { onClick: this.edit,
-	                    className: 'btn btn-success glyphicon glyphicon-pencil' }),
-	                React.createElement('button', { onClick: this.remove,
-	                    className: 'btn btn-danger glyphicon glyphicon-remove' })
-	            )
-	        );
-	    },
-	    renderForm: function renderForm() {
-	        return React.createElement(
-	            'div',
-	            { className: 'note' },
-	            React.createElement(
-	                'textarea',
-	                { ref: 'newText', value: this.props.children.bind,
-	                    className: 'form-control' },
-	                ' '
-	            ),
-	            React.createElement('button', { onClick: this.save, className: ' btn btn-primary glyphicon glyphicon-ok' })
-	        );
-	    },
-	    render: function render() {
-	        if (this.state.editing) {
-	            return this.renderForm();
-	        } else {
-	            return this.renderDisplay();
-	        }
-	    }
-	});
+	var Note = __webpack_require__(172);
 	
 	var Board = React.createClass({
 	    displayName: 'Board',
@@ -176,13 +107,23 @@
 	            'div',
 	            { className: 'board' },
 	            this.state.notes.map(this.everyNote),
+	            React.createElement(
+	                'h1',
+	                null,
+	                'Sticky'
+	            ),
+	            React.createElement(
+	                'p',
+	                { id: '#welcomeText' },
+	                'Welcome to Sticky your note sticking app'
+	            ),
 	            React.createElement('button', { className: 'btn btn-lg btn-warning glyphicon glyphicon-plus', onClick: this.add.bind(null, "Edit Me") })
 	        );
 	    }
 	});
 	
 	document.addEventListener('DOMContentLoaded', function () {
-	    ReactDOM.render(React.createElement(Board, { count: 10 }), document.getElementById('test'));
+	    ReactDOM.render(React.createElement(Board, { count: 10 }), document.getElementById('board'));
 	});
 
 /***/ },
@@ -21551,6 +21492,88 @@
 	
 	module.exports = ReactDOMNullInputValuePropHook;
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
+
+/***/ },
+/* 172 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	/* global $ */
+	var React = __webpack_require__(1);
+	var ReactDOM = __webpack_require__(34);
+	
+	var Note = React.createClass({
+	    displayName: 'Note',
+	
+	    getInitialState: function getInitialState() {
+	        return { editing: false };
+	    },
+	    componentWillMount: function componentWillMount() {
+	        this.style = {
+	            right: this.randomBetween(0, window.innerWidth - 200) + 'px',
+	            top: this.randomBetween(0, window.innerHeight - 200) + 'px',
+	            transform: 'rotate(' + this.randomBetween(-15, 15) + 'deg)'
+	        };
+	    },
+	    componentDidMount: function componentDidMount() {
+	        $(ReactDOM.findDOMNode(this)).draggable();
+	    },
+	    randomBetween: function randomBetween(min, max) {
+	        return min + Math.ceil(Math.random() * max);
+	    },
+	    edit: function edit() {
+	        this.setState({ editing: true });
+	    },
+	    save: function save() {
+	        this.props.onChange(ReactDOM.findDOMNode(this.refs.newText).value, this.props.index);
+	        this.setState({ editing: false });
+	    },
+	    remove: function remove() {
+	        this.props.onRemove(this.props.index);
+	    },
+	    renderDisplay: function renderDisplay() {
+	        return React.createElement(
+	            'div',
+	            { className: 'note', style: this.style },
+	            React.createElement(
+	                'p',
+	                null,
+	                this.props.children
+	            ),
+	            React.createElement(
+	                'span',
+	                null,
+	                React.createElement('button', { onClick: this.edit,
+	                    className: 'btn btn-success glyphicon glyphicon-pencil' }),
+	                React.createElement('button', { onClick: this.remove,
+	                    className: 'btn btn-danger glyphicon glyphicon-remove' })
+	            )
+	        );
+	    },
+	    renderForm: function renderForm() {
+	        return React.createElement(
+	            'div',
+	            { className: 'note' },
+	            React.createElement(
+	                'textarea',
+	                { ref: 'newText', value: this.props.children.bind,
+	                    className: 'form-control' },
+	                ' '
+	            ),
+	            React.createElement('button', { onClick: this.save, className: ' btn btn-primary glyphicon glyphicon-ok' })
+	        );
+	    },
+	    render: function render() {
+	        if (this.state.editing) {
+	            return this.renderForm();
+	        } else {
+	            return this.renderDisplay();
+	        }
+	    }
+	});
+	
+	module.exports = Note;
 
 /***/ }
 /******/ ]);

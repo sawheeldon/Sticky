@@ -1,69 +1,7 @@
 /* global $ */
 var React = require('react');
 var ReactDOM = require('react-dom');
-
-
-var Note = React.createClass({
-    getInitialState:function(){
-      return {editing: false};  
-    },
-    componentWillMount: function() {
-        this.style = {
-            right: this.randomBetween(0, window.innerWidth - 200) + 'px',
-            top: this.randomBetween(0, window.innerHeight - 200) + 'px',
-            transform: 'rotate(' + this.randomBetween(-15, 15) + 'deg)'
-        };
-    },
-    componentDidMount: function(){
-        $(ReactDOM.findDOMNode(this)).draggable(); 
-    },
-    randomBetween: function(min, max) {
-        return (min + Math.ceil(Math.random() * max));
-    },
-    edit: function() {
-      this.setState({editing:true});
-    },
-    save: function(){
-        this.props.onChange(ReactDOM.findDOMNode(this.refs.newText).value, this.props.index);
-        this.setState({editing:false});
-    },
-    remove: function(){
-     this.props.onRemove(this.props.index);
-    },
-    renderDisplay: function(){
-        return(
-            <div className="note" style={this.style}>
-                <p>{this.props.children}</p>
-                <span>
-                <button onClick={this.edit} 
-                    className="btn btn-success glyphicon glyphicon-pencil"/>
-                <button onClick={this.remove} 
-                    className="btn btn-danger glyphicon glyphicon-remove"/>
-                </span>    
-            </div>
-            
-            );
-    },
-    renderForm: function(){
-        return(
-            <div className="note">
-            <textarea ref="newText" value={this.props.children.bind} 
-                className="form-control"> </textarea>
-                <button onClick={this.save} className=" btn btn-primary glyphicon glyphicon-ok" />
-            </div>
-            );
-    },
-    render: function(){
-        if(this.state.editing) {
-            return this.renderForm();
-        }
-        else {
-            return this.renderDisplay();
-        }
-    }
-});
-
-
+var Note= require('./note.js');
 
 var Board = React.createClass({
       propTypes: {
@@ -117,6 +55,8 @@ var Board = React.createClass({
     render: function() {
         return (<div className="board">
                     {this.state.notes.map(this.everyNote)}
+                    <h1>Sticky</h1>
+                    <p id="#welcomeText">Welcome to Sticky your note sticking app</p>
                     <button className="btn btn-lg btn-warning glyphicon glyphicon-plus" onClick={this.add.bind(null, "Edit Me")}/>
             </div>
 
@@ -125,11 +65,6 @@ var Board = React.createClass({
 });
 
 
-
-
-
-
-
 document.addEventListener('DOMContentLoaded', function() {
-    ReactDOM.render(<Board count={10} />, document.getElementById('test'));
+    ReactDOM.render(<Board count={10} />, document.getElementById('board'));
 });
