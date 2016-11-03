@@ -37,7 +37,7 @@ h1 {
   text-decoration: underline;
   padding: 2rem;
 }
-#welcomeText {
+.welcomeText {
   font-size: 25px;
   padding: 2rem;
 }
