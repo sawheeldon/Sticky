@@ -56,7 +56,7 @@ var Board = React.createClass({
         return (<div className="board">
                     {this.state.notes.map(this.everyNote)}
                     <h1>Sticky</h1>
-                    <p id="#welcomeText">Welcome to Sticky your note sticking app</p>
+                    <p id="#welcomeText">Welcome to Sticky your note sticking app. Click the Add button below to add sticky notes. Edit or delete as many notes as you like. You can even drag the notes around, try it it's fun! </p>
                     <button className="btn btn-lg btn-warning glyphicon glyphicon-plus" onClick={this.add.bind(null, "Edit Me")}/>
             </div>
 
