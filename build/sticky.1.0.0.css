@@ -35,16 +35,19 @@ h1 {
   font-family: 'Baloo Da', cursive;
   font-size: 50px;
   text-decoration: underline;
-  padding: 2rem;
+  padding: 1rem;
 }
-.welcomeText {
-  font-size: 20px;
-  padding: 2rem;
+#welcomeText {
+  font-size: 19px;
+  padding: 1rem;
+}
+.welcomeTextLi {
+  font-size: 17px;
 }
 .note {
   height: 200px;
   width: 200px;
-  margin-top: 200px;
+  margin-top: 300px;
   margin-right: 2rem;
   margin-left: 2rem;
   margin-bottom: 300px;
