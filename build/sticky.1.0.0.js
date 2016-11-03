@@ -117,6 +117,11 @@
 	                { id: '#welcomeText' },
 	                'Welcome to Sticky your note sticking app'
 	            ),
+	            React.createElement(
+	                'p',
+	                { id: '#welcomeText' },
+	                'Click the Add button below to add sticky notes. Edit or delete as many notes as you like. You can even drag the notes around...'
+	            ),
 	            React.createElement('button', { className: 'btn btn-lg btn-warning glyphicon glyphicon-plus', onClick: this.add.bind(null, "Edit Me") })
 	        );
 	    }
