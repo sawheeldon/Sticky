@@ -27,9 +27,14 @@ General styles (General Module, wrapping around the modules bellow)
 */
 body {
   font-family: 'Indie Flower', cursive;
-  background-color: #05B7FF;
+  background-color: #368AB2;
   font-size: 20px;
   text-align: center;
+  max-width: 1024px;
+  height: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  overflow-y: hidden;
 }
 h1 {
   font-family: 'Baloo Da', cursive;
@@ -43,15 +48,18 @@ h1 {
 }
 .welcomeTextLi {
   font-size: 17px;
+  list-style: outside none none;
+}
+.plusButton {
+  background-color: #CCC637;
 }
 .note {
   height: 200px;
   width: 200px;
-  margin-top: 300px;
+  margin-top: 50px;
   margin-right: 2rem;
   margin-left: 2rem;
-  margin-bottom: 300px;
-  background-color: #e1e1e1;
+  background-color: #5ECBFF;
   border: solid 3px black;
   position: absolute;
   display: inline-block;
@@ -68,6 +76,6 @@ div.note > textarea {
   height: 75%;
 }
 .board {
-  background-color: #05B7FF;
+  background-color: #368AB2;
 }
 /*# sourceMappingURL=sticky.1.0.0.css.map */

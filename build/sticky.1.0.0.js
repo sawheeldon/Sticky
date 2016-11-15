@@ -136,7 +136,7 @@
 	                    'You can even drag the notes around...'
 	                )
 	            ),
-	            React.createElement('button', { className: 'btn btn-lg btn-warning glyphicon glyphicon-plus', onClick: this.add.bind(null, "Edit Me") })
+	            React.createElement('button', { className: 'btn btn-lg glyphicon glyphicon-plus plusButton', onClick: this.add.bind(null, "Edit Me") })
 	        );
 	    }
 	});

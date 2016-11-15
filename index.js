@@ -62,7 +62,7 @@ var Board = React.createClass({
                         <li className="welcomeTextLi">Edit or delete as many notes as you like</li>
                         <li className="welcomeTextLi">You can even drag the notes around...</li>
                     </ol>
-                    <button className="btn btn-lg btn-warning glyphicon glyphicon-plus" onClick={this.add.bind(null, "Edit Me")}/>
+                    <button className="btn btn-lg glyphicon glyphicon-plus plusButton" onClick={this.add.bind(null, "Edit Me")}/>
             </div>
 
         );

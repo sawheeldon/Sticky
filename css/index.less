@@ -24,9 +24,9 @@ CSS reset
     }
 /* variables */    
 
-@noteBackground: rgb(225, 225, 225);
-@backgroundColor: #05B7FF;
-@hightlightColor: #A5DDFE;
+@noteBackground: #5ECBFF;
+@backgroundColor: #368AB2;
+@hightlightColor: #FF7787;
 @genPad:1rem;
 @thickBorder: solid 3px black;
 @titleFont:'Baloo Da', cursive;
@@ -43,6 +43,11 @@ body{
     background-color:@backgroundColor;
     font-size:20px;
     text-align:center;
+    max-width:1024px;
+    height: 100%;
+    margin-left:auto;
+    margin-right:auto;
+    overflow-y: hidden;
 }
 
 h1{
@@ -57,15 +62,18 @@ h1{
 }
 .welcomeTextLi{
     font-size:17px;
+    list-style: outside none none;
+}
+.plusButton{
+    background-color:#CCC637;
 }
 
 .note{
     height: 200px;
     width: 200px;
-    margin-top:300px;
+    margin-top:50px;
     margin-right:2rem;
     margin-left:2rem;
-    margin-bottom:300px;
     background-color:@noteBackground;
     border: @thickBorder;
     position: absolute;
